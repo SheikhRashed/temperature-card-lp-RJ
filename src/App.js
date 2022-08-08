@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
+import Card from "./Components/Card/Card"
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"
+
 import './App.css';
 
 function App() {
+  const [temValue, setTemValue] = useState(18)
+  const [temColor, setTemColor] = useState("cold")
+
+  const incTem = () => {
+    const newTem = temValue + 1
+    if (newTem >= 21) {
+      setTemColor("hot")
+    }
+    setTemValue(newTem)
+  }
+
+  const decTem = () => {
+    const newTem = temValue - 1
+    if (newTem < 21) {
+      setTemColor("cold")
+    }
+    setTemValue(newTem)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card className={temColor}>
+        {/* Temperature Display */}
+        <div className="temperature-display">
+          <span>{temValue} °C</span>
+        </div>
+        {/* Temperature Buttons */}
+        <div className="temperature-buttons">
+          <button onClick={decTem}>
+            <AiOutlineMinus />
+          </button>
+
+          <button onClick={incTem}>
+            <AiOutlinePlus />
+          </button>
+        </div>
+      </Card>
     </div>
   );
 }

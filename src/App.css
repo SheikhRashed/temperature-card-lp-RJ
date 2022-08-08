@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+.card { 
+    width: 100%;
+    padding: 24px;
+    margin: 0px auto;
+    max-width: 640px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    transition: all 0.3s linear;
+    box-shadow: 1px 6px 19px -7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 1px 6px 19px -7px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 6px 19px -7px rgba(0,0,0,0.3);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.temperature-display { 
+    width: 100%;
+    height: 80px;
+    display: flex;
+    margin: 0px auto;
+    margin-bottom: 24px;
+    align-items: center;
+    border: 2px solid #000;
+    justify-content: center;
+    background-color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.temperature-buttons { 
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button { 
+    width: 120px;
+    height: 40px;
+    display: flex;
+    margin: 0px 4px;
+    max-width: 100%;
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
 }
 
-.App-link {
-  color: #61dafb;
+/* temperature Color Change  */
+.hot { 
+    background-color: #FF5B00;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cold { 
+    background-color: #0096FF;
 }
